@@ -1,0 +1,19 @@
+name: Run WebDriver Tests
+
+on:
+    push:
+
+jobs:
+    wdio:
+
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install Node dependencies
+              run: npm ci
+
+            - name: Run Tests
+              run: npx wdio run --baseUrl="http://localhost:9000/" wdio.conf.js
+
+
