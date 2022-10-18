@@ -10,6 +10,9 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
+            - name: Start server
+              run: cd web && php -S 0.0.0.0:9000 -t ./
+
             - uses: actions/setup-node@v1
               with:
                 node-version: 18
