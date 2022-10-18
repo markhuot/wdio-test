@@ -23,4 +23,10 @@ jobs:
             - name: Run Tests
               run: npm run test
 
+            - uses: actions/upload-artifact@v1
+              if: failure()
+              with:
+                name: logs
+                path: logs
+
 
